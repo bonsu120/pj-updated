@@ -1,8 +1,8 @@
 import "./App.css";
 import { useMemo } from "react";
 import * as anchor from "@project-serum/anchor";
-import Home from "./Home";
-import { DEFAULT_TIMEOUT } from "./connection";
+import Minting from "./Minting/Minting";
+import { DEFAULT_TIMEOUT } from "./Minting/connection";
 import { clusterApiUrl } from "@solana/web3.js";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import {
@@ -72,14 +72,14 @@ const App = () => {
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={wallets} autoConnect>
           <WalletDialogProvider>
-            <Home
+            {/* <Minting
               candyMachineId={candyMachineId}
               connection={connection}
               txTimeout={DEFAULT_TIMEOUT}
               rpcHost={rpcHost}
               network={network}
               error={error}
-            />
+            /> */}
           </WalletDialogProvider>
         </WalletProvider>
       </ConnectionProvider>
